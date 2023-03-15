@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CRUD-SYSTEM</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="w-50 mx-auto py-5">
+
+        <h1>Product Mangment system </h1>
+        <div class="form-group mb-3">
+            <label class="mb-2" for="productname">productname: </label>
+            <input type="text" onkeyup="validateProductName()" id="productname" class="form-control">
+            <p class="text-danger d-none" id="name-error">invalid product name hint(should start with capital)</p>
+        </div>
+        <div class="form-group mb-3">
+            <label for="productprice">productprice: </label>
+            <input type="number" id="productprice" class="form-control" onkeyup="validateProductPrice()">
+            <p class="text-danger d-none" id="price-error">invalid price hint(1000-10000)</p>
+        </div>
+        <div class="form-group mb-3">
+            <label for="productCat">productCat: </label>
+            <input type="text" id="productCat" class="form-control" onkeyup="validateProductCat()">
+            <p class="text-danger d-none" id="cat-error">invalid Category hint(mobile/TV/device)</p>
+
+        </div>
+        <div class="form-group mb-3">
+            <label for="productDesc">productDesc: </label>
+            <input type="text" id="productDesc" class="form-control" onkeyup="validateProductDesc()">
+        </div>
+        <button class="btn btn-outline-info" id="mainBtn" onclick="addProduct()">Add Product</button>
+        <button class="btn btn-outline-warning d-none" id="UpdateBtn" onclick="Update()">Update</button>
+    </div>
+    <div class="w-50 mx-auto mb-3">
+        <label for="">search</label>
+        <input type="text" oninput=" search(this.value)" class="form-control">
+    </div>
+    <div class="w-50 mx-auto mb-3">
+        <table class="table text-center">
+            <thead>
+                <th>index</th>
+                <th>ProductName</th>
+                <th>ProductPrice</th>
+                <th>ProductCategory</th>
+                <th>ProductDesc</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="tableData">
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
